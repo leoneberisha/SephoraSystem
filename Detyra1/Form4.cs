@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,21 @@ using System.Windows.Forms;
 
 namespace Detyra1
 {
+
     public partial class Form4 : Form
     {
+        string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
+        private void LoadBibloteka()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT id,emri as 'Emri Furnitorit',email as 'Email', telefoni as 'Telefon', adresa as 'Adresa' FROM furnitore";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                
+            }
+        }
         public Form4()
         {
             InitializeComponent();
@@ -47,7 +61,23 @@ namespace Detyra1
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                //"SELECT id,emri as 'Emri Furnitorit',email as 'Email', telefoni as 'Telefon', adresa as 'Adresa' FROM furnitore";
+                string query = "INSERT INTO furnitore(emri,email , telefoni, adresa) VALUES(@emri, @email, @telefoni, @adresa) ";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@emri", textBox1.Text);
+                cmd.Parameters.AddWithValue("@email ", textBox2.Text);
+                cmd.Parameters.AddWithValue("@telefoni", textBox3.Text);
+                cmd.Parameters.AddWithValue("@adresa", textBox4.Text);
 
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                LoadBibloteka();
+
+
+            }
         }
     }
 }

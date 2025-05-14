@@ -1,12 +1,118 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|c:\\users\\admin\\onedrive\\desktop\\sephorasistem\\detyra1\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|solutionrelative:detyra1\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|c:\\users\\admin\\onedrive\\desktop\\sephorasistem\\detyra1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|solutionrelative:detyra1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|c:\\users\\admin\\onedrive\\desktop\\sephorasistem\\detyra1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|solutionrelative:detyra1\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|c:\\users\\admin\\onedrive\\desktop\\sephorasistem\\detyra1\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|solutionrelative:detyra1\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|c:\\users\\admin\\onedrive\\desktop\\sephorasistem\\detyra1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|solutionrelative:detyra1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|c:\\users\\admin\\onedrive\\desktop\\sephorasistem\\detyra1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{77D68B91-A5D2-4320-9AA3-E2A404D65FE6}|Detyra1\\Detyra1.csproj|solutionrelative:detyra1\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form4.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form4.cs",
+              "RelativeDocumentMoniker": "Detyra1\\Form4.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form4.cs",
+              "RelativeToolTip": "Detyra1\\Form4.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAADwv0IAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T16:51:16.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form4.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form4.cs",
+              "RelativeDocumentMoniker": "Detyra1\\Form4.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form4.cs [Design]",
+              "RelativeToolTip": "Detyra1\\Form4.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T16:49:20.994Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form3.cs",
+              "RelativeDocumentMoniker": "Detyra1\\Form3.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form3.cs",
+              "RelativeToolTip": "Detyra1\\Form3.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T16:00:50.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form3.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form3.cs",
+              "RelativeDocumentMoniker": "Detyra1\\Form3.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form3.cs [Design]",
+              "RelativeToolTip": "Detyra1\\Form3.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T15:58:33.839Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form2.cs",
+              "RelativeDocumentMoniker": "Detyra1\\Form2.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form2.cs [Design]",
+              "RelativeToolTip": "Detyra1\\Form2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T15:58:31.103Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form1.cs",
+              "RelativeDocumentMoniker": "Detyra1\\Form1.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\SephoraSistem\\Detyra1\\Form1.cs [Design]",
+              "RelativeToolTip": "Detyra1\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T15:58:16.612Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
