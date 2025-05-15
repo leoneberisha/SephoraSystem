@@ -33,11 +33,9 @@ namespace Detyra1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fornitoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shtoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.shihToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.kategoriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shikoKategoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shihToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mascaraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shtoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,24 +75,16 @@ namespace Detyra1
             // fornitoreToolStripMenuItem
             // 
             this.fornitoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shtoToolStripMenuItem1,
             this.shihToolStripMenuItem1});
             this.fornitoreToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.fornitoreToolStripMenuItem.Name = "fornitoreToolStripMenuItem";
             this.fornitoreToolStripMenuItem.Size = new System.Drawing.Size(162, 45);
             this.fornitoreToolStripMenuItem.Text = "Furnitore";
             // 
-            // shtoToolStripMenuItem1
-            // 
-            this.shtoToolStripMenuItem1.Name = "shtoToolStripMenuItem1";
-            this.shtoToolStripMenuItem1.Size = new System.Drawing.Size(172, 46);
-            this.shtoToolStripMenuItem1.Text = "Shto";
-            this.shtoToolStripMenuItem1.Click += new System.EventHandler(this.shtoFurnitore);
-            // 
             // shihToolStripMenuItem1
             // 
             this.shihToolStripMenuItem1.Name = "shihToolStripMenuItem1";
-            this.shihToolStripMenuItem1.Size = new System.Drawing.Size(172, 46);
+            this.shihToolStripMenuItem1.Size = new System.Drawing.Size(224, 46);
             this.shihToolStripMenuItem1.Text = "Shih";
             this.shihToolStripMenuItem1.Click += new System.EventHandler(this.shihFurnitore);
             // 
@@ -113,23 +103,15 @@ namespace Detyra1
             // shikoKategoriToolStripMenuItem
             // 
             this.shikoKategoriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shtoToolStripMenuItem,
             this.shihToolStripMenuItem});
             this.shikoKategoriToolStripMenuItem.Name = "shikoKategoriToolStripMenuItem";
             this.shikoKategoriToolStripMenuItem.Size = new System.Drawing.Size(249, 46);
             this.shikoKategoriToolStripMenuItem.Text = "Fondatine";
             // 
-            // shtoToolStripMenuItem
-            // 
-            this.shtoToolStripMenuItem.Name = "shtoToolStripMenuItem";
-            this.shtoToolStripMenuItem.Size = new System.Drawing.Size(172, 46);
-            this.shtoToolStripMenuItem.Text = "Shto";
-            this.shtoToolStripMenuItem.Click += new System.EventHandler(this.ShtoFondatine);
-            // 
             // shihToolStripMenuItem
             // 
             this.shihToolStripMenuItem.Name = "shihToolStripMenuItem";
-            this.shihToolStripMenuItem.Size = new System.Drawing.Size(172, 46);
+            this.shihToolStripMenuItem.Size = new System.Drawing.Size(224, 46);
             this.shihToolStripMenuItem.Text = "Shih";
             this.shihToolStripMenuItem.Click += new System.EventHandler(this.ShihFondatine);
             // 
@@ -241,14 +223,14 @@ namespace Detyra1
             // shtoPorosiToolStripMenuItem
             // 
             this.shtoPorosiToolStripMenuItem.Name = "shtoPorosiToolStripMenuItem";
-            this.shtoPorosiToolStripMenuItem.Size = new System.Drawing.Size(224, 46);
+            this.shtoPorosiToolStripMenuItem.Size = new System.Drawing.Size(172, 46);
             this.shtoPorosiToolStripMenuItem.Text = "Shto";
             this.shtoPorosiToolStripMenuItem.Click += new System.EventHandler(this.ShtoPorosi);
             // 
             // shikoToolStripMenuItem
             // 
             this.shikoToolStripMenuItem.Name = "shikoToolStripMenuItem";
-            this.shikoToolStripMenuItem.Size = new System.Drawing.Size(224, 46);
+            this.shikoToolStripMenuItem.Size = new System.Drawing.Size(172, 46);
             this.shikoToolStripMenuItem.Text = "Shih";
             this.shikoToolStripMenuItem.Click += new System.EventHandler(this.ShihPorosite);
             // 
@@ -262,6 +244,7 @@ namespace Detyra1
             this.label5.Size = new System.Drawing.Size(436, 94);
             this.label5.TabIndex = 11;
             this.label5.Text = "S E P H O R A";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Form2
             // 
@@ -291,7 +274,6 @@ namespace Detyra1
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem kategoriteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shikoKategoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shtoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mascaraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lipstickToolStripMenuItem;
@@ -303,7 +285,6 @@ namespace Detyra1
         private System.Windows.Forms.ToolStripMenuItem shtoPorosiToolStripMenuItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem fornitoreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shtoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem shtoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem2;

@@ -25,11 +25,6 @@ namespace Detyra1
             DialogResult dialogResult = form4.ShowDialog();
         }
 
-        private void ShtoFondatine(object sender, EventArgs e)
-        {
-            Form5 form5 = new Form5();
-            form5.ShowDialog();
-        }
 
 
         private void ShihFondatine(object sender, EventArgs e)
@@ -104,6 +99,11 @@ namespace Detyra1
         {
             Form16 form16 = new Form16();
             form16.ShowDialog();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
