@@ -69,7 +69,7 @@ namespace Detyra1
             textBox4.Clear();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//== RUAJ
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
