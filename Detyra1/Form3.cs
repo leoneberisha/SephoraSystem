@@ -7,11 +7,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Detyra1
 {
     public partial class Form3 : Form
     {
+
 
         public void LoadFurnitore()
         {

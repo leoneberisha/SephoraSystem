@@ -33,25 +33,13 @@ namespace Detyra1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fornitoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shihToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.kategoriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shikoKategoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shihToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mascaraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shtoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.shihToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.lipstickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shtoBuzekuqToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shihToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.blushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shtoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.shihToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.produktetToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.shtoprodukteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shihProdukteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porositeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shtoPorosiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shikoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,19 +62,11 @@ namespace Detyra1
             // 
             // fornitoreToolStripMenuItem
             // 
-            this.fornitoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shihToolStripMenuItem1});
             this.fornitoreToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.fornitoreToolStripMenuItem.Name = "fornitoreToolStripMenuItem";
             this.fornitoreToolStripMenuItem.Size = new System.Drawing.Size(162, 45);
             this.fornitoreToolStripMenuItem.Text = "Furnitore";
-            // 
-            // shihToolStripMenuItem1
-            // 
-            this.shihToolStripMenuItem1.Name = "shihToolStripMenuItem1";
-            this.shihToolStripMenuItem1.Size = new System.Drawing.Size(224, 46);
-            this.shihToolStripMenuItem1.Text = "Shih";
-            this.shihToolStripMenuItem1.Click += new System.EventHandler(this.shihFurnitore);
+            this.fornitoreToolStripMenuItem.Click += new System.EventHandler(this.shihFurnitore);
             // 
             // kategoriteToolStripMenuItem
             // 
@@ -102,137 +82,49 @@ namespace Detyra1
             // 
             // shikoKategoriToolStripMenuItem
             // 
-            this.shikoKategoriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shihToolStripMenuItem});
             this.shikoKategoriToolStripMenuItem.Name = "shikoKategoriToolStripMenuItem";
             this.shikoKategoriToolStripMenuItem.Size = new System.Drawing.Size(249, 46);
             this.shikoKategoriToolStripMenuItem.Text = "Fondatine";
-            // 
-            // shihToolStripMenuItem
-            // 
-            this.shihToolStripMenuItem.Name = "shihToolStripMenuItem";
-            this.shihToolStripMenuItem.Size = new System.Drawing.Size(224, 46);
-            this.shihToolStripMenuItem.Text = "Shih";
-            this.shihToolStripMenuItem.Click += new System.EventHandler(this.ShihFondatine);
+            this.shikoKategoriToolStripMenuItem.Click += new System.EventHandler(this.ShihFondatine);
             // 
             // mascaraToolStripMenuItem
             // 
-            this.mascaraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shtoToolStripMenuItem2,
-            this.shihToolStripMenuItem2});
             this.mascaraToolStripMenuItem.Name = "mascaraToolStripMenuItem";
             this.mascaraToolStripMenuItem.Size = new System.Drawing.Size(249, 46);
             this.mascaraToolStripMenuItem.Text = "Maskara";
-            // 
-            // shtoToolStripMenuItem2
-            // 
-            this.shtoToolStripMenuItem2.Name = "shtoToolStripMenuItem2";
-            this.shtoToolStripMenuItem2.Size = new System.Drawing.Size(172, 46);
-            this.shtoToolStripMenuItem2.Text = "Shto";
-            this.shtoToolStripMenuItem2.Click += new System.EventHandler(this.ShtoMaskara);
-            // 
-            // shihToolStripMenuItem2
-            // 
-            this.shihToolStripMenuItem2.Name = "shihToolStripMenuItem2";
-            this.shihToolStripMenuItem2.Size = new System.Drawing.Size(172, 46);
-            this.shihToolStripMenuItem2.Text = "Shih";
-            this.shihToolStripMenuItem2.Click += new System.EventHandler(this.ShihMaskara);
+            this.mascaraToolStripMenuItem.Click += new System.EventHandler(this.ShihMaskara);
             // 
             // lipstickToolStripMenuItem
             // 
-            this.lipstickToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shtoBuzekuqToolStripMenuItem,
-            this.shihToolStripMenuItem3});
             this.lipstickToolStripMenuItem.Name = "lipstickToolStripMenuItem";
             this.lipstickToolStripMenuItem.Size = new System.Drawing.Size(249, 46);
             this.lipstickToolStripMenuItem.Text = "Buzekuq";
-            // 
-            // shtoBuzekuqToolStripMenuItem
-            // 
-            this.shtoBuzekuqToolStripMenuItem.Name = "shtoBuzekuqToolStripMenuItem";
-            this.shtoBuzekuqToolStripMenuItem.Size = new System.Drawing.Size(172, 46);
-            this.shtoBuzekuqToolStripMenuItem.Text = "Shto";
-            this.shtoBuzekuqToolStripMenuItem.Click += new System.EventHandler(this.ShtoBuzekuq);
-            // 
-            // shihToolStripMenuItem3
-            // 
-            this.shihToolStripMenuItem3.Name = "shihToolStripMenuItem3";
-            this.shihToolStripMenuItem3.Size = new System.Drawing.Size(172, 46);
-            this.shihToolStripMenuItem3.Text = "Shih";
-            this.shihToolStripMenuItem3.Click += new System.EventHandler(this.ShihBuzekuq);
+            this.lipstickToolStripMenuItem.Click += new System.EventHandler(this.ShihBuzekuq);
             // 
             // blushToolStripMenuItem
             // 
-            this.blushToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shtoToolStripMenuItem3,
-            this.shihToolStripMenuItem4});
             this.blushToolStripMenuItem.Name = "blushToolStripMenuItem";
             this.blushToolStripMenuItem.Size = new System.Drawing.Size(249, 46);
             this.blushToolStripMenuItem.Text = "Blush";
-            // 
-            // shtoToolStripMenuItem3
-            // 
-            this.shtoToolStripMenuItem3.Name = "shtoToolStripMenuItem3";
-            this.shtoToolStripMenuItem3.Size = new System.Drawing.Size(172, 46);
-            this.shtoToolStripMenuItem3.Text = "Shto";
-            this.shtoToolStripMenuItem3.Click += new System.EventHandler(this.ShtoBlush);
-            // 
-            // shihToolStripMenuItem4
-            // 
-            this.shihToolStripMenuItem4.Name = "shihToolStripMenuItem4";
-            this.shihToolStripMenuItem4.Size = new System.Drawing.Size(172, 46);
-            this.shihToolStripMenuItem4.Text = "Shih";
-            this.shihToolStripMenuItem4.Click += new System.EventHandler(this.ShihBlush);
+            this.blushToolStripMenuItem.Click += new System.EventHandler(this.ShihBlush);
             // 
             // produktetToolStripMenuItem1
             // 
             this.produktetToolStripMenuItem1.BackColor = System.Drawing.Color.Black;
-            this.produktetToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shtoprodukteToolStripMenuItem,
-            this.shihProdukteToolStripMenuItem});
             this.produktetToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.produktetToolStripMenuItem1.Name = "produktetToolStripMenuItem1";
             this.produktetToolStripMenuItem1.Size = new System.Drawing.Size(168, 45);
             this.produktetToolStripMenuItem1.Text = "Produktet";
-            // 
-            // shtoprodukteToolStripMenuItem
-            // 
-            this.shtoprodukteToolStripMenuItem.Name = "shtoprodukteToolStripMenuItem";
-            this.shtoprodukteToolStripMenuItem.Size = new System.Drawing.Size(180, 46);
-            this.shtoprodukteToolStripMenuItem.Text = "Shto ";
-            this.shtoprodukteToolStripMenuItem.Click += new System.EventHandler(this.ShtoProdukt);
-            // 
-            // shihProdukteToolStripMenuItem
-            // 
-            this.shihProdukteToolStripMenuItem.Name = "shihProdukteToolStripMenuItem";
-            this.shihProdukteToolStripMenuItem.Size = new System.Drawing.Size(180, 46);
-            this.shihProdukteToolStripMenuItem.Text = "Shih";
-            this.shihProdukteToolStripMenuItem.Click += new System.EventHandler(this.ShihProduktet);
+            this.produktetToolStripMenuItem1.Click += new System.EventHandler(this.ShihProduktet);
             // 
             // porositeToolStripMenuItem
             // 
             this.porositeToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.porositeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shtoPorosiToolStripMenuItem,
-            this.shikoToolStripMenuItem});
             this.porositeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.porositeToolStripMenuItem.Name = "porositeToolStripMenuItem";
             this.porositeToolStripMenuItem.Size = new System.Drawing.Size(144, 45);
             this.porositeToolStripMenuItem.Text = "Porosite";
-            // 
-            // shtoPorosiToolStripMenuItem
-            // 
-            this.shtoPorosiToolStripMenuItem.Name = "shtoPorosiToolStripMenuItem";
-            this.shtoPorosiToolStripMenuItem.Size = new System.Drawing.Size(172, 46);
-            this.shtoPorosiToolStripMenuItem.Text = "Shto";
-            this.shtoPorosiToolStripMenuItem.Click += new System.EventHandler(this.ShtoPorosi);
-            // 
-            // shikoToolStripMenuItem
-            // 
-            this.shikoToolStripMenuItem.Name = "shikoToolStripMenuItem";
-            this.shikoToolStripMenuItem.Size = new System.Drawing.Size(172, 46);
-            this.shikoToolStripMenuItem.Text = "Shih";
-            this.shikoToolStripMenuItem.Click += new System.EventHandler(this.ShihPorosite);
+            this.porositeToolStripMenuItem.Click += new System.EventHandler(this.ShihPorosite);
             // 
             // label5
             // 
@@ -274,24 +166,12 @@ namespace Detyra1
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem kategoriteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shikoKategoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mascaraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lipstickToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blushToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produktetToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem shtoprodukteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shihProdukteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porositeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shtoPorosiToolStripMenuItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem fornitoreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem shtoToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem shtoBuzekuqToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem shtoToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem shihToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem shikoToolStripMenuItem;
     }
 }
