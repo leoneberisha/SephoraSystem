@@ -63,6 +63,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "←";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -143,7 +144,7 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 125;
             // 
-            // Form17
+            // Form16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +156,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form17";
+            this.Name = "Form16";
             this.Text = "ShikoPorosi";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
