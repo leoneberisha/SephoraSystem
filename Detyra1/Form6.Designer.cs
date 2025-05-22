@@ -108,7 +108,7 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button5.Location = new System.Drawing.Point(573, 550);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(71, 47);
+            this.button5.Size = new System.Drawing.Size(75, 47);
             this.button5.TabIndex = 97;
             this.button5.Text = "Fshij";
             this.button5.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button4.Location = new System.Drawing.Point(473, 550);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(68, 47);
+            this.button4.Size = new System.Drawing.Size(73, 47);
             this.button4.TabIndex = 96;
             this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
