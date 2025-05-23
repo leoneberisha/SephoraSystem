@@ -44,7 +44,8 @@ namespace Detyra1
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form7 form7 = new Form7();
+            form7.ShowDialog();
         }
     }
 }
