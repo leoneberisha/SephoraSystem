@@ -44,17 +44,17 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-2, 120);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1082, 415);
+            this.dataGridView1.Size = new System.Drawing.Size(1068, 415);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cambria", 10F);
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(24, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 29);
             this.button1.TabIndex = 1;
@@ -67,7 +67,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(262, 20);
+            this.label5.Location = new System.Drawing.Point(344, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(344, 73);
             this.label5.TabIndex = 12;
@@ -76,7 +76,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(1095, 141);
+            this.button3.Location = new System.Drawing.Point(1107, 143);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(53, 40);
             this.button3.TabIndex = 88;
@@ -87,7 +87,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(904, 80);
+            this.textBox1.Location = new System.Drawing.Point(916, 82);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 34);
             this.textBox1.TabIndex = 91;
@@ -95,7 +95,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1095, 80);
+            this.button2.Location = new System.Drawing.Point(1107, 82);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(36, 37);
             this.button2.TabIndex = 90;
@@ -106,7 +106,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button5.Location = new System.Drawing.Point(573, 550);
+            this.button5.Location = new System.Drawing.Point(585, 552);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 47);
             this.button5.TabIndex = 97;
@@ -117,7 +117,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button4.Location = new System.Drawing.Point(473, 550);
+            this.button4.Location = new System.Drawing.Point(485, 552);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(73, 47);
             this.button4.TabIndex = 96;

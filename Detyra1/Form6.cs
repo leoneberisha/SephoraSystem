@@ -68,7 +68,7 @@ namespace Detyra1
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //edit
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
