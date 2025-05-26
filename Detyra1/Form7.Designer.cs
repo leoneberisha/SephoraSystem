@@ -131,13 +131,14 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button4.Location = new System.Drawing.Point(335, 508);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button4.Location = new System.Drawing.Point(277, 508);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(80, 47);
             this.button4.TabIndex = 85;
-            this.button4.Text = "⎙";
+            this.button4.Text = "Ruaj";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // linkLabel1
             // 

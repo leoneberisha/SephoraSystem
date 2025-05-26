@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,5 +34,25 @@ namespace Detyra1
             textBox7.Clear();
             textBox8.Clear();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = "insert into maskara(emriFurnitorit,emriKategorise,emriMaskares,sasia,cmimiBlerjes,cmimiShitjes,aktiv) VALUES (@emriFurnitorit,@emriKategorise,@emriMaskares,@sasia,@cmimiBlerjes,@cmimiShitjes,@aktiv)";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@emriFurnitorit",textBox1.Text);
+                cmd.Parameters.AddWithValue("@emriKategorise",textBox2.Text);
+                cmd.Parameters.AddWithValue("@emriMaskares", textBox3.Text);
+                cmd.Parameters.AddWithValue("@sasia", textBox4.Text);
+                cmd.Parameters.AddWithValue("@cmimiBlerjes", textBox5.Text);
+                cmd.Parameters.AddWithValue("@cmimiShitjes",textBox6.Text);
+                cmd.Parameters.AddWithValue("@aktiv",textBox7.Text);
+                cmd.Parameters.AddWithValue("@totali",textBox8.Text);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            }
     }
 }
