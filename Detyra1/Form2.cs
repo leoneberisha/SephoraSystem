@@ -45,10 +45,11 @@ namespace Detyra1
             form8.ShowDialog();
         }
 
-        private void ShtoBuzekuq(object sender, EventArgs e)
+        private void ShtoBuzekuq(object sender, EventArgs e, Form9 form9)
         {
-            Form9 form9 = new Form9();
-            form9.ShowDialog();
+            Form9 formInsert = new Form9(); 
+            formInsert.ShowDialog();
+
         }
 
         private void ShihBuzekuq(object sender, EventArgs e)

@@ -23,10 +23,10 @@ namespace Detyra1
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+
         }
 
-        public void loadMaskara()
+        public void LoadMaskara()
         {
 
             string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
@@ -57,7 +57,6 @@ namespace Detyra1
 
                 int id = Convert.ToInt32(selectedRow.Cells["id"].Value);
                 string emriFurnitorit = selectedRow.Cells["Emri furnitorit"].Value.ToString();
-                string emriKategorise = selectedRow.Cells["Emri kategorise"].Value.ToString();
                 string ermriMaskares = selectedRow.Cells["Emri maskares"].Value.ToString();
                 string sasia = selectedRow.Cells["sasia"].Value.ToString();
                 string cmimiBlerjes = selectedRow.Cells["cmimiBlerjes"].Value.ToString();
@@ -65,13 +64,40 @@ namespace Detyra1
                 string aktiv = selectedRow.Cells["aktiv"].ToString();
                 string totali = selectedRow.Cells["totali"].ToString();
 
-                Form7 form7 = new Form7(this,id,emriFurnitorit,emriKategorise, ermriMaskares,sasia,cmimiBlerjes,cmimiShitjes,aktiv,totali,true);
-                form7.ShowDialog();
+                Form7 form7 = new Form7();
+                form7.ShowDialog(this);
 
             }
             else
             {
                 MessageBox.Show("Zgjedh një rresht për të edituar.");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("A jeni i sigurt që dëshironi të fshini këtë fondatine?", "Konfirmo Fshirjen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+
+                    string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
+                    using (MySqlConnection conn = new MySqlConnection(connectionString))
+                    {
+                        string query = "DELETE FROM fondatine WHERE id = @id";
+                        MySqlCommand cmd = new MySqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+
+                    // Rifresko DataGridView
+                    LoadMaskara();
+                }
             }
         }
     }

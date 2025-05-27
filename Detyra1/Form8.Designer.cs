@@ -81,7 +81,7 @@ namespace Detyra1
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(899, 84);
+            this.textBox1.Location = new System.Drawing.Point(918, 84);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 34);
             this.textBox1.TabIndex = 93;
@@ -105,6 +105,7 @@ namespace Detyra1
             this.button5.TabIndex = 96;
             this.button5.Text = "Fshij";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -119,10 +120,10 @@ namespace Detyra1
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.button3.Location = new System.Drawing.Point(1100, 124);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 46);
+            this.button3.Size = new System.Drawing.Size(43, 38);
             this.button3.TabIndex = 94;
             this.button3.Text = "Shto";
             this.button3.UseVisualStyleBackColor = true;
@@ -133,7 +134,7 @@ namespace Detyra1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1204, 545);
+            this.ClientSize = new System.Drawing.Size(1207, 545);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

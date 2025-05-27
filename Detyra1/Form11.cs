@@ -31,7 +31,12 @@ namespace Detyra1
             textBox5.Clear();
             textBox6.Clear();
             textBox7.Clear();
-            textBox8.Clear();
+           
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
 
         }
     }
