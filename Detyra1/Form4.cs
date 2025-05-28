@@ -40,15 +40,6 @@ namespace Detyra1
         }
 
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kategoriteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public static implicit operator Form4(Form5 v)
         {
@@ -143,4 +134,7 @@ namespace Detyra1
 
     }
 }
+
+
+
 

@@ -13,11 +13,11 @@ namespace Detyra1
 {
     public partial class Form3 : Form
     {
+        string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
 
 
         public void LoadFurnitore()
         {
-            string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 string query = "SELECT id, emri AS 'Emri Furnitorit', email AS 'Email', telefoni AS 'Telefon', adresa AS 'Adresa' FROM furnitore";
@@ -33,10 +33,6 @@ namespace Detyra1
             InitializeComponent();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -104,22 +100,34 @@ namespace Detyra1
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {//butoni kerkoj
-            string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
+        {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = "SELECT id, emri AS 'Emri Furnitorit', email AS 'Email', telefoni AS 'Telefon', adresa AS 'Adresa' FROM furnitore WHERE emri LIKE @search";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
+                string query = @"SELECT id, 
+                                emri_furnitorit AS 'Furnitori',
+                                emri_fondatines AS 'Produkti',
+                                nuanca AS 'Nuanca',
+                                stoku AS 'Stoku',
+                                sasia AS 'Sasia',
+                                cmimiBlerjes AS 'Blerja',
+                                cmimiShitjes AS 'Shitja',
+                                totali AS 'Totali',
+                                aktiv AS 'Statusi'
+                         FROM fondatine
+                         WHERE emri_fondatines LIKE @search";
 
-                // Marrim tekstin nga TextBox, jo nga butoni
+                MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@search", "%" + textBox1.Text + "%");
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
+
                 dataGridView1.DataSource = table;
+                dataGridView1.AllowUserToAddRows = false; // ⛔ mos shto rresht të zbrazët
             }
         }
+
 
     }
 }
