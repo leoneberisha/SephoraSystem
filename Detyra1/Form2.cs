@@ -17,15 +17,6 @@ namespace Detyra1
             InitializeComponent();
         }
 
-      
-
-         private void shtoFurnitore(object sender, EventArgs e)
-        {
-            Form4 form4 = new Form4();
-            DialogResult dialogResult = form4.ShowDialog();
-        }
-
-
 
         private void ShihFondatine(object sender, EventArgs e)
         {
@@ -33,11 +24,6 @@ namespace Detyra1
             form6.ShowDialog();
         }
 
-        private void ShtoMaskara(object sender, EventArgs e)
-        {
-            Form7 form7 = new Form7();
-            form7.ShowDialog();
-        }
 
         private void ShihMaskara(object sender, EventArgs e)
         {
@@ -45,12 +31,6 @@ namespace Detyra1
             form8.ShowDialog();
         }
 
-        private void ShtoBuzekuq(object sender, EventArgs e, Form9 form9)
-        {
-            Form9 formInsert = new Form9(); 
-            formInsert.ShowDialog();
-
-        }
 
         private void ShihBuzekuq(object sender, EventArgs e)
         {
@@ -58,11 +38,7 @@ namespace Detyra1
             form10.ShowDialog();
         }
 
-        private void ShtoBlush(object sender, EventArgs e)
-        {
-            Form11 form11 = new Form11();
-            form11.ShowDialog();
-        }
+       
 
         private void ShihBlush(object sender, EventArgs e)
         {
@@ -70,23 +46,8 @@ namespace Detyra1
             form12.ShowDialog();
         }
 
-        private void ShtoProdukt(object sender, EventArgs e)
-        {
-            Form13 form13 = new Form13();
-            form13.ShowDialog();
-        }
 
-        private void ShikoProduktet(object sender, EventArgs e)
-        {
-            Form14 form14 = new Form14();
-            form14.ShowDialog();
-        }
 
-        private void ShtoPorosi(object sender, EventArgs e)
-        {
-            Form15 form15 = new Form15();
-            form15.ShowDialog();
-        }
 
       
 
