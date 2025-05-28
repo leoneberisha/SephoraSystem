@@ -72,7 +72,6 @@
             this.label2.Size = new System.Drawing.Size(212, 32);
             this.label2.TabIndex = 30;
             this.label2.Text = "Emri fondatines";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox6
             // 
@@ -251,7 +250,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(80, 47);
             this.button3.TabIndex = 92;
-            this.button3.Text = "Fshij";
+            this.button3.Text = "Insert";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -262,7 +261,6 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(270, 38);
             this.textBox9.TabIndex = 96;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label10
             // 
