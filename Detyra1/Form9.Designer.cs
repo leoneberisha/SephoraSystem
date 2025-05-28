@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,17 +54,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(285, 38);
             this.textBox4.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(115, 472);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 32);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Totali";
             // 
             // textBox3
             // 
@@ -158,18 +145,19 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(336, 573);
+            this.button2.Location = new System.Drawing.Point(332, 532);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 49);
             this.button2.TabIndex = 85;
             this.button2.Text = "Ruaj";
             this.button2.UseVisualStyleBackColor = true;
-             // 
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(607, 519);
+            this.linkLabel1.Location = new System.Drawing.Point(603, 478);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(79, 16);
             this.linkLabel1.TabIndex = 93;
@@ -209,22 +197,14 @@
             this.textBox6.Size = new System.Drawing.Size(284, 38);
             this.textBox6.TabIndex = 102;
             // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(398, 472);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(284, 38);
-            this.textBox7.TabIndex = 101;
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(441, 573);
+            this.button3.Location = new System.Drawing.Point(437, 532);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(63, 49);
             this.button3.TabIndex = 105;
-            this.button3.Text = "Shto";
+            this.button3.Text = "Insert";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -238,14 +218,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -262,7 +240,6 @@
 
         #endregion
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
@@ -277,7 +254,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button3;
     }
 }

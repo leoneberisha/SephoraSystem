@@ -95,6 +95,7 @@ namespace Detyra1
             this.button2.TabIndex = 92;
             this.button2.Text = "🔍";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button5
             // 
@@ -123,7 +124,7 @@ namespace Detyra1
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.button3.Location = new System.Drawing.Point(1100, 124);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(43, 38);
+            this.button3.Size = new System.Drawing.Size(53, 50);
             this.button3.TabIndex = 94;
             this.button3.Text = "Shto";
             this.button3.UseVisualStyleBackColor = true;
@@ -134,7 +135,7 @@ namespace Detyra1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1207, 545);
+            this.ClientSize = new System.Drawing.Size(1274, 545);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Detyra1
@@ -18,55 +12,50 @@ namespace Detyra1
         public Form8()
         {
             InitializeComponent();
+            LoadMaskara();
+        }
+
+        public void LoadMaskara()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT id, emriFurnitorit AS 'Furnitori', emriMaskares AS 'Maskara', sasia AS 'Sasia', cmimiBlerjes AS 'Blerja', cmimiShitjes AS 'Shitja', totali AS 'Totali', aktiv AS 'Aktiv' FROM maskara";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+                dataGridView1.AllowUserToAddRows = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
-        public void LoadMaskara()
-        {
-
-            string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    string query = "SELECT id, emriFurnitorit as 'Emri Furnitorit',emriKategorise as 'Emri Kategorise',emriMaskares as 'Emri Maskares',sasia as'Sasia',cmimiBlerjes as 'Cmimi Blerjes',cmimiShitjes as 'Cmimi Shitjes',aktiv as  'Aktiv',totali as 'Totali' FROM maskara";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView1.DataSource = table;
-                }
-
-            }
-        }
         private void button3_Click(object sender, EventArgs e)
         {
-            Form7 form7 = new Form7();
+            Form7 form7 = new Form7(this);
             form7.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
                 int id = Convert.ToInt32(selectedRow.Cells["id"].Value);
-                string emriFurnitorit = selectedRow.Cells["Emri furnitorit"].Value.ToString();
-                string ermriMaskares = selectedRow.Cells["Emri maskares"].Value.ToString();
-                string sasia = selectedRow.Cells["sasia"].Value.ToString();
-                string cmimiBlerjes = selectedRow.Cells["cmimiBlerjes"].Value.ToString();
-                string cmimiShitjes = selectedRow.Cells["cmimiShitjes"].Value.ToString();
-                string aktiv = selectedRow.Cells["aktiv"].ToString();
-                string totali = selectedRow.Cells["totali"].ToString();
+                string emriFurnitorit = selectedRow.Cells["Furnitori"].Value.ToString();
+                string emriMaskares = selectedRow.Cells["Maskara"].Value.ToString();
+                string sasia = selectedRow.Cells["Sasia"].Value.ToString();
+                string cmimiBlerjes = selectedRow.Cells["Blerja"].Value.ToString();
+                string cmimiShitjes = selectedRow.Cells["Shitja"].Value.ToString();
+                string totali = selectedRow.Cells["Totali"].Value.ToString();
+                string aktiv = selectedRow.Cells["Aktiv"].Value.ToString();
 
-                Form7 form7 = new Form7();
-                form7.ShowDialog(this);
-
+                Form7 form7 = new Form7(this, id, emriFurnitorit, emriMaskares, sasia, cmimiBlerjes, cmimiShitjes, aktiv, totali, true);
+                form7.ShowDialog();
             }
             else
             {
@@ -78,15 +67,14 @@ namespace Detyra1
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                DialogResult result = MessageBox.Show("A jeni i sigurt që dëshironi të fshini këtë fondatine?", "Konfirmo Fshirjen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("A jeni i sigurt që dëshironi të fshini këtë maskarë?", "Konfirmo Fshirjen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
 
-                    string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
-                        string query = "DELETE FROM fondatine WHERE id = @id";
+                        string query = "DELETE FROM maskara WHERE id = @id";
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         cmd.Parameters.AddWithValue("@id", id);
 
@@ -95,10 +83,39 @@ namespace Detyra1
                         conn.Close();
                     }
 
-                    // Rifresko DataGridView
                     LoadMaskara();
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+         
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = @"SELECT id,
+                        emriFurnitorit AS 'Furnitori',
+                        emriMaskares AS 'Maskara',
+                        sasia AS 'Sasia',
+                        cmimiBlerjes AS 'Blerja',
+                        cmimiShitjes AS 'Shitja',
+                        totali AS 'Totali',
+                        aktiv AS 'Statusi'
+                FROM maskara
+                WHERE emriMaskares LIKE @search";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@search", "%" + textBox1.Text + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                dataGridView1.DataSource = table;
+                dataGridView1.AllowUserToAddRows = false; // ⛔ mos shto rresht të zbrazët
+            }
+        }
+
     }
 }
+
