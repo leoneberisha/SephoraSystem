@@ -15,18 +15,17 @@ namespace Detyra1
     public partial class Form4 : Form
     {
         string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
-        private void LoadFurnitore()
+        public void LoadFurnitore()
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = "SELECT id,emri as 'Emri Furnitorit',email as 'Email', telefoni as 'Telefon', adresa as 'Adresa' FROM furnitore";
+                string query = "SELECT id, emri AS 'Emri Furnitorit', email AS 'Email', telefoni AS 'Telefon', adresa AS 'Adresa' FROM furnitore";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
-                Form3 form3 = new Form3();
-                form3.ShowDialog();
             }
         }
+
         public Form4()
         {
             InitializeComponent();

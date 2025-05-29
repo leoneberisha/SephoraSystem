@@ -120,8 +120,27 @@ namespace Detyra1
             textBox5.Clear();
             textBox6.Clear();
             textBox7.Clear();
-            textBox8.Clear();
             textBox9.Clear();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            LlogaritTotalin();
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            LlogaritTotalin();
+        }
+
+        private void LlogaritTotalin()
+        {
+            if (int.TryParse(textBox5.Text.Trim(), out int sasia) &&
+                decimal.TryParse(textBox7.Text.Trim(), out decimal cmimiShitjes))
+            {
+                decimal totali = sasia * cmimiShitjes;
+            }
+           
         }
     }
 }

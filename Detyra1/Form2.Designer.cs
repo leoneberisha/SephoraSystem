@@ -38,7 +38,6 @@ namespace Detyra1
             this.mascaraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lipstickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produktetToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.porositeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -52,7 +51,6 @@ namespace Detyra1
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fornitoreToolStripMenuItem,
             this.kategoriteToolStripMenuItem,
-            this.produktetToolStripMenuItem1,
             this.porositeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -108,15 +106,6 @@ namespace Detyra1
             this.blushToolStripMenuItem.Text = "Blush";
             this.blushToolStripMenuItem.Click += new System.EventHandler(this.ShihBlush);
             // 
-            // produktetToolStripMenuItem1
-            // 
-            this.produktetToolStripMenuItem1.BackColor = System.Drawing.Color.Black;
-            this.produktetToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.produktetToolStripMenuItem1.Name = "produktetToolStripMenuItem1";
-            this.produktetToolStripMenuItem1.Size = new System.Drawing.Size(168, 45);
-            this.produktetToolStripMenuItem1.Text = "Produktet";
-            this.produktetToolStripMenuItem1.Click += new System.EventHandler(this.ShihProduktet);
-            // 
             // porositeToolStripMenuItem
             // 
             this.porositeToolStripMenuItem.BackColor = System.Drawing.Color.Black;
@@ -169,7 +158,6 @@ namespace Detyra1
         private System.Windows.Forms.ToolStripMenuItem mascaraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lipstickToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blushToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produktetToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem porositeToolStripMenuItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem fornitoreToolStripMenuItem;

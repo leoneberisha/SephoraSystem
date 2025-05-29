@@ -21,7 +21,7 @@ namespace Detyra1
             {
                 string query = @"SELECT id, emri_furnitorit AS 'Furnitori', emriBlush AS 'Produkti',
                                 nuanca AS 'Nuanca', cmimiBlerjes AS 'Blerja', cmimiShitjes AS 'Shitja',
-                                saisa AS 'Sasia', stoku AS 'Stoku'
+                                sasia AS 'Sasia', stoku AS 'Stoku'
                                 FROM blush";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 DataTable table = new DataTable();
@@ -39,7 +39,7 @@ namespace Detyra1
             {
                 string query = @"SELECT id, emri_furnitorit AS 'Furnitori', emriBlush AS 'Produkti',
                                 nuanca AS 'Nuanca', cmimiBlerjes AS 'Blerja', cmimiShitjes AS 'Shitja',
-                                saisa AS 'Sasia', stoku AS 'Stoku'
+                                sasia AS 'Sasia', stoku AS 'Stoku'
                                 FROM blush
                                 WHERE emriBlush LIKE @search";
 
@@ -75,7 +75,7 @@ namespace Detyra1
                 string stoku = row.Cells["Stoku"].Value.ToString();
 
                 Form11 form11 = new Form11(this, id, emriFurnitorit, emriBlush, nuanca,
-                                           cmimiBlerjes, cmimiShitjes, sasia, stoku);
+                                           cmimiBlerjes, cmimiShitjes, sasia, stoku,true);
                 form11.ShowDialog();
             }
             else

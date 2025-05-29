@@ -58,7 +58,7 @@
             this.button2.TabIndex = 43;
             this.button2.Text = "←";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox5
             // 
@@ -155,8 +155,9 @@
             this.button4.TabIndex = 85;
             this.button4.Text = "Ruaj";
             this.button4.UseVisualStyleBackColor = true;
-//
-// linkLabel1
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
@@ -229,7 +230,7 @@
             this.button1.TabIndex = 98;
             this.button1.Text = "Insert";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form11
             // 

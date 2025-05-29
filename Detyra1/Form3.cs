@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Detyra1
@@ -15,39 +9,54 @@ namespace Detyra1
     {
         string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
 
+        public Form3()
+        {
+            InitializeComponent();
+            LoadFurnitore(); // Ngarko të dhënat kur hapet forma
+        }
 
         public void LoadFurnitore()
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                string query = "SELECT id, emri AS 'Emri Furnitorit', email AS 'Email', telefoni AS 'Telefon', adresa AS 'Adresa' FROM furnitore";
+                string query = "SELECT id, emri as 'Emri Furnitorit', email as 'Email', telefoni as 'Telefon', adresa as 'Adresa' FROM furnitore";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 dataGridView1.DataSource = table;
+                dataGridView1.AllowUserToAddRows = false;
             }
         }
-
-        public Form3()
-        {
-            InitializeComponent();
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT id, emri as 'Emri Furnitorit', email as 'Email', telefoni as 'Telefon', adresa as 'Adresa' FROM furnitore WHERE emri LIKE @search";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@search", "%" + textBox1.Text + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+                dataGridView1.AllowUserToAddRows = false;
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4(this);  
+            Form4 form4 = new Form4(this);  // Formë për shtim të furnitorëve
             form4.ShowDialog();
-
-
-            }
+        }
 
         private void button4_Click(object sender, EventArgs e)
-        {//edito buton
+        {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
@@ -58,8 +67,7 @@ namespace Detyra1
                 string telefoni = selectedRow.Cells["Telefon"].Value.ToString();
                 string adresa = selectedRow.Cells["Adresa"].Value.ToString();
 
-                // Hap Form4 për editim dhe dërgo të dhënat
-                Form4 form4 = new Form4(this, id, emri, email, telefoni, adresa, true); // true = editing mode
+                Form4 form4 = new Form4(this, id, emri, email, telefoni, adresa, true);
                 form4.ShowDialog();
             }
             else
@@ -69,7 +77,7 @@ namespace Detyra1
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {//fshij buton
+        {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 DialogResult result = MessageBox.Show("A jeni i sigurt që dëshironi të fshini këtë furnitor?", "Konfirmo Fshirjen", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -77,7 +85,6 @@ namespace Detyra1
                 {
                     int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
 
-                    string connectionString = "server=localhost;database=sephorasistem;uid=root;pwd=;";
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
                         string query = "DELETE FROM furnitore WHERE id = @id";
@@ -89,7 +96,6 @@ namespace Detyra1
                         conn.Close();
                     }
 
-                    // Rifresko DataGridView
                     LoadFurnitore();
                 }
             }
@@ -99,37 +105,35 @@ namespace Detyra1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                string query = @"SELECT id, 
-                                emri_furnitorit AS 'Furnitori',
-                                emri_fondatines AS 'Produkti',
-                                nuanca AS 'Nuanca',
-                                stoku AS 'Stoku',
-                                sasia AS 'Sasia',
-                                cmimiBlerjes AS 'Blerja',
-                                cmimiShitjes AS 'Shitja',
-                                totali AS 'Totali',
-                                aktiv AS 'Statusi'
-                         FROM fondatine
-                         WHERE emri_fondatines LIKE @search";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@search", "%" + textBox1.Text + "%");
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                dataGridView1.DataSource = table;
-                dataGridView1.AllowUserToAddRows = false; // ⛔ mos shto rresht të zbrazët
-            }
+            // opsionale nëse do të trajtosh klikime në qeliza
         }
 
+        private void button4_Click_1(object sender, EventArgs e)
+        {
 
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                int id = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                string emri = selectedRow.Cells["Emri Furnitorit"].Value.ToString();
+                string email = selectedRow.Cells["Email"].Value.ToString();
+                string telefoni = selectedRow.Cells["Telefon"].Value.ToString();
+                string adresa = selectedRow.Cells["Adresa"].Value.ToString();
+
+                // Hap Form4 në modalitet editimi dhe dërgon të dhënat
+                Form4 form4 = new Form4(this, id, emri, email, telefoni, adresa, true);
+                form4.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Zgjedh një rresht për të edituar.");
+            }
+        }
     }
 }
-    
+
+
 

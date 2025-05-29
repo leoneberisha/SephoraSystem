@@ -45,12 +45,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox7
@@ -211,25 +211,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(140, 423);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 32);
-            this.label8.TabIndex = 88;
-            this.label8.Text = "Totali";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(391, 423);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(270, 38);
-            this.textBox8.TabIndex = 89;
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -272,6 +253,25 @@
             this.label10.Size = new System.Drawing.Size(76, 32);
             this.label10.TabIndex = 93;
             this.label10.Text = "Aktiv";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(391, 423);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(270, 38);
+            this.textBox8.TabIndex = 89;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(140, 423);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 32);
+            this.label8.TabIndex = 88;
+            this.label8.Text = "Totali";
             // 
             // Form5
             // 
@@ -328,11 +328,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label8;
     }
 }
