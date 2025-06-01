@@ -114,3 +114,4 @@ C:\Users\Admin\OneDrive\Desktop\SephoraSystem\Detyra1\obj\Debug\login.csproj.Cor
 C:\Users\Admin\OneDrive\Desktop\SephoraSystem\Detyra1\obj\Debug\login.csproj.Up2Date
 C:\Users\Admin\OneDrive\Desktop\SephoraSystem\Detyra1\obj\Debug\Detyra1.exe
 C:\Users\Admin\OneDrive\Desktop\SephoraSystem\Detyra1\obj\Debug\Detyra1.pdb
+C:\Users\Admin\OneDrive\Desktop\SephoraSystem\Detyra1\obj\Debug\Detyra1.Form17.resources
