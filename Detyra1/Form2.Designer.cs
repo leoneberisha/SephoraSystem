@@ -39,6 +39,9 @@ namespace Detyra1
             this.lipstickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porositeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.raportiDitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.raportiMujorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +54,8 @@ namespace Detyra1
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fornitoreToolStripMenuItem,
             this.kategoriteToolStripMenuItem,
-            this.porositeToolStripMenuItem});
+            this.porositeToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(869, 49);
@@ -115,6 +119,30 @@ namespace Detyra1
             this.porositeToolStripMenuItem.Text = "Porosite";
             this.porositeToolStripMenuItem.Click += new System.EventHandler(this.ShihPorosite);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Black;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.raportiDitorToolStripMenuItem,
+            this.raportiMujorToolStripMenuItem});
+            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(125, 45);
+            this.toolStripMenuItem1.Text = "Raport";
+            // 
+            // raportiDitorToolStripMenuItem
+            // 
+            this.raportiDitorToolStripMenuItem.Name = "raportiDitorToolStripMenuItem";
+            this.raportiDitorToolStripMenuItem.Size = new System.Drawing.Size(303, 46);
+            this.raportiDitorToolStripMenuItem.Text = "Raporti Ditor";
+            this.raportiDitorToolStripMenuItem.Click += new System.EventHandler(this.raportiDitorToolStripMenuItem_Click);
+            // 
+            // raportiMujorToolStripMenuItem
+            // 
+            this.raportiMujorToolStripMenuItem.Name = "raportiMujorToolStripMenuItem";
+            this.raportiMujorToolStripMenuItem.Size = new System.Drawing.Size(303, 46);
+            this.raportiMujorToolStripMenuItem.Text = "Raporti Mujor";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -161,5 +189,8 @@ namespace Detyra1
         private System.Windows.Forms.ToolStripMenuItem porositeToolStripMenuItem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem fornitoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem raportiDitorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem raportiMujorToolStripMenuItem;
     }
 }
