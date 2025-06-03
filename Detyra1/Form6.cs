@@ -108,5 +108,10 @@ namespace Detyra1
                 MessageBox.Show("Zgjedh një rresht që dëshiron ta fshish.");
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
