@@ -183,6 +183,16 @@ namespace Detyra1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sephora_resized_246x144 {
+            get {
+                object obj = ResourceManager.GetObject("sephora_resized_246x144", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sephora1 {
             get {
                 object obj = ResourceManager.GetObject("sephora1", resourceCulture);
@@ -226,6 +236,16 @@ namespace Detyra1.Properties {
         internal static System.Drawing.Bitmap sephora5 {
             get {
                 object obj = ResourceManager.GetObject("sephora5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sephoraWhite {
+            get {
+                object obj = ResourceManager.GetObject("sephoraWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

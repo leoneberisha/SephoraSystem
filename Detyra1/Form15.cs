@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace Detyra1
 {
@@ -148,8 +150,13 @@ namespace Detyra1
                 cmd.Parameters.AddWithValue("@statusi", statusi);
                 cmd.Parameters.AddWithValue("@totali", totali);
 
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                cmd.ExecuteNonQuery(); // ⬅️ KTU e fut porosinë në databazë
+
+                // ⬇️ KETU SHTOJE THIRRJEN E FATURES
+                Form19 Form19 = new Form19(emri, mbiemri, produkti, sasia, cmimi, statusi, totali);
+                Form19.Show();
+
+                conn.Close(); // pastaj e m
             }
 
             MessageBox.Show(isEditMode ? "Porosia u përditësua me sukses." : "Porosia u shtua me sukses.");

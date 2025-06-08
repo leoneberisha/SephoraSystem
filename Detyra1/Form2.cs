@@ -71,9 +71,8 @@ namespace Detyra1
      
         private void raportiDitorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form17 form17 = new Form17();
-            form17.ShowDialog();
-
+          Form17 form17 = new Form17();
+          form17.ShowDialog();
         }
     }
 }
