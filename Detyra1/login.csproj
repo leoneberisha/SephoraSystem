@@ -345,5 +345,8 @@
   <ItemGroup>
     <None Include="Resources\sephora_resized_246x144.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sephora_logo_84x70.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

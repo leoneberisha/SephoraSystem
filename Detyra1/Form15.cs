@@ -3,7 +3,6 @@ using System;
 using System.Windows.Forms;
 using System.Globalization;
 
-
 namespace Detyra1
 {
     public partial class Form15 : Form
@@ -52,64 +51,6 @@ namespace Detyra1
             radioButton1.Checked = true;
         }
 
-        private void button1_Click(object sender, EventArgs e) // Ruaj ose Shto
-        {
-            string emri = textBox1.Text.Trim();
-            string mbiemri = textBox2.Text.Trim();
-            string produkti = textBox3.Text.Trim();
-
-            if (!int.TryParse(textBox4.Text.Trim(), out int sasia) ||
-                !decimal.TryParse(textBox5.Text.Trim(), out decimal cmimi))
-            {
-                MessageBox.Show("Shkruaj sasi dhe çmim valid.");
-                return;
-            }
-
-            string statusi = "";
-            if (radioButton1.Checked) statusi = "Pending";
-            else if (radioButton2.Checked) statusi = "Shipped";
-            else if (radioButton3.Checked) statusi = "Delivered";
-
-            decimal totali = sasia * cmimi;
-
-            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=sephorasistem;uid=root;pwd=;"))
-            {
-                conn.Open();
-                MySqlCommand cmd;
-
-                if (isEditMode)
-                {
-                    string updateQuery = @"UPDATE porosit SET emri_klientit=@emri, mbiemri_klientit=@mbiemri,
-                                            produkti=@produkti, sasia=@sasia, cmimi=@cmimi, statusi=@statusi, totali=@totali
-                                            WHERE id=@id";
-                    cmd = new MySqlCommand(updateQuery, conn);
-                    cmd.Parameters.AddWithValue("@id", editingId);
-                }
-                else
-                {
-                    string insertQuery = @"INSERT INTO porosit (emri_klientit, mbiemri_klientit, produkti, 
-                                            sasia, cmimi, statusi, totali)
-                                            VALUES (@emri, @mbiemri, @produkti, @sasia, @cmimi, @statusi, @totali)";
-                    cmd = new MySqlCommand(insertQuery, conn);
-                }
-
-                cmd.Parameters.AddWithValue("@emri", emri);
-                cmd.Parameters.AddWithValue("@mbiemri", mbiemri);
-                cmd.Parameters.AddWithValue("@produkti", produkti);
-                cmd.Parameters.AddWithValue("@sasia", sasia);
-                cmd.Parameters.AddWithValue("@cmimi", cmimi);
-                cmd.Parameters.AddWithValue("@statusi", statusi);
-                cmd.Parameters.AddWithValue("@totali", totali);
-
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-
-            MessageBox.Show(isEditMode ? "Porosia u përditësua me sukses." : "Porosia u shtua me sukses.");
-            form16Reference?.GetType().GetMethod("LoadPorosite")?.Invoke(form16Reference, null);
-            this.Close();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             string emri = textBox1.Text.Trim();
@@ -129,19 +70,17 @@ namespace Detyra1
             else if (radioButton3.Checked) statusi = "Delivered";
 
             decimal totali = sasia * cmimi;
+            string nrFatures = "FA" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
             using (MySqlConnection conn = new MySqlConnection("server=localhost;database=sephorasistem;uid=root;pwd=;"))
             {
                 conn.Open();
-                MySqlCommand cmd;
 
-               
-                    string query = @"INSERT INTO porosit (emri_klientit, mbiemri_klientit, produkti,
-                            sasia, cmimi, statusi, totali)
-                            VALUES (@emri, @mbiemri, @produkti, @sasia, @cmimi, @statusi, @totali)";
-                    cmd = new MySqlCommand(query, conn);
-                
+                string query = @"INSERT INTO porosit (emri_klientit, mbiemri_klientit, produkti,
+                          sasia, cmimi, statusi, totali, nr_fatures)
+                         VALUES (@emri, @mbiemri, @produkti, @sasia, @cmimi, @statusi, @totali, @nrFatures)";
 
+                MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@emri", emri);
                 cmd.Parameters.AddWithValue("@mbiemri", mbiemri);
                 cmd.Parameters.AddWithValue("@produkti", produkti);
@@ -149,19 +88,25 @@ namespace Detyra1
                 cmd.Parameters.AddWithValue("@cmimi", cmimi);
                 cmd.Parameters.AddWithValue("@statusi", statusi);
                 cmd.Parameters.AddWithValue("@totali", totali);
+                cmd.Parameters.AddWithValue("@nrFatures", nrFatures);
 
-                cmd.ExecuteNonQuery(); // ⬅️ KTU e fut porosinë në databazë
+                cmd.ExecuteNonQuery();
 
-                // ⬇️ KETU SHTOJE THIRRJEN E FATURES
-                Form19 Form19 = new Form19(emri, mbiemri, produkti, sasia, cmimi, statusi, totali);
-                Form19.Show();
+                long insertedId = cmd.LastInsertedId;
+                Form19 fatura = new Form19((int)insertedId);
+                fatura.Show();
 
-                conn.Close(); // pastaj e m
+                conn.Close();
             }
 
-            MessageBox.Show(isEditMode ? "Porosia u përditësua me sukses." : "Porosia u shtua me sukses.");
             form16Reference?.GetType().GetMethod("LoadPorosite")?.Invoke(form16Reference, null);
             this.Close();
+
+            string emriKlientit = emri + " " + mbiemri;
+            Form19 fatura = new Form19((int)insertedId, emriKlientit);
+            fatura.Show();
+
         }
+
     }
 }

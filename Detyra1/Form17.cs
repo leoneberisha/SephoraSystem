@@ -42,7 +42,7 @@ namespace Detyra1
             {
                 conn.Open();
 
-                // 🧾 1. Shfaq Totali i Shitjeve
+                // Shfaq Totali i Shitjeve
                 string queryTotali = @"SELECT SUM(totali) AS shuma FROM porosit WHERE DATE(data) = @data";
                 MySqlCommand cmdTotali = new MySqlCommand(queryTotali, conn);
                 cmdTotali.Parameters.AddWithValue("@data", dataSot);
@@ -51,7 +51,7 @@ namespace Detyra1
                     ? Convert.ToDecimal(resultTotali).ToString("F2") + " €"
                     : "0.00 €";
 
-                // 🗂 2. Shfaq Porositë në DataGridView
+                //Shfaq Porositë në DataGridView
                 string queryLista = @"SELECT emri_klientit AS 'Emri',
                                      produkti AS 'Produkti',
                                      sasia AS 'Sasia',
@@ -66,14 +66,14 @@ namespace Detyra1
                 adapter.Fill(tabela);
                 dataGridView1.DataSource = tabela;
 
-                // 🔢 3. Shfaq Numrin e Produkteve të Shitura
+                // Shfaq Numrin e Produkteve të Shitura
                 string querySasia = @"SELECT SUM(sasia) FROM porosit WHERE DATE(data) = @data";
                 MySqlCommand cmdSasia = new MySqlCommand(querySasia, conn);
                 cmdSasia.Parameters.AddWithValue("@data", dataSot);
                 object resultSasia = cmdSasia.ExecuteScalar();
                 label13.Text = resultSasia != DBNull.Value ? resultSasia.ToString() : "0";
 
-                // 📊 4. Shfaq Grafikun e Produkteve më të Shitura
+                // Shfaq Grafikun e Produkteve më të Shitura
                 string queryChart = @"SELECT produkti, SUM(sasia) AS total_sasia
                               FROM porosit
                               WHERE DATE(data) = @data

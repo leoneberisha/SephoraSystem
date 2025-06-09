@@ -183,6 +183,16 @@ namespace Detyra1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sephora_logo_84x70 {
+            get {
+                object obj = ResourceManager.GetObject("sephora_logo_84x70", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sephora_resized_246x144 {
             get {
                 object obj = ResourceManager.GetObject("sephora_resized_246x144", resourceCulture);
