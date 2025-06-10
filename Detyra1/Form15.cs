@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
-using System.Globalization;
 
 namespace Detyra1
 {
@@ -93,7 +92,9 @@ namespace Detyra1
                 cmd.ExecuteNonQuery();
 
                 long insertedId = cmd.LastInsertedId;
-                Form19 fatura = new Form19((int)insertedId);
+
+                string emriKlientit = emri + " " + mbiemri;
+                Form19 fatura = new Form19((int)insertedId, emriKlientit);
                 fatura.Show();
 
                 conn.Close();
@@ -101,12 +102,62 @@ namespace Detyra1
 
             form16Reference?.GetType().GetMethod("LoadPorosite")?.Invoke(form16Reference, null);
             this.Close();
-
-            string emriKlientit = emri + " " + mbiemri;
-            Form19 fatura = new Form19((int)insertedId, emriKlientit);
-            fatura.Show();
-
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;database=sephorasistem;uid=root;pwd=;"))
+            {
+                conn.Open();
+                MySqlCommand cmd;
+
+                decimal sasia = decimal.Parse(textBox4.Text);
+                decimal cmimi = decimal.Parse(textBox5.Text);
+                decimal totali = sasia * cmimi;
+                string statusi = radioButton1.Checked ? "Pending" :
+                                 radioButton2.Checked ? "Shipped" :
+                                 radioButton3.Checked ? "Delivered" : "";
+
+                string nrFatures = "FA" + DateTime.Now.ToString("yyyyMMddHHmmss");
+
+                if (isEditMode)
+                {
+                    string updateQuery = @"UPDATE porosit SET 
+                                      emri_klientit = @emri,
+                                      mbiemri_klientit = @mbiemri,
+                                      produkti = @produkti,
+                                      sasia = @sasia,
+                                      cmimi = @cmimi,
+                                      statusi = @statusi,
+                                      totali = @totali
+                                   WHERE id = @id";
+
+                    cmd = new MySqlCommand(updateQuery, conn);
+                    cmd.Parameters.AddWithValue("@id", editingId);
+                }
+                else
+                {
+                    string insertQuery = @"INSERT INTO porosit
+                                   (emri_klientit, mbiemri_klientit, produkti, sasia, cmimi, statusi, totali, nr_fatures)
+                                   VALUES (@emri, @mbiemri, @produkti, @sasia, @cmimi, @statusi, @totali, @nrFatures)";
+                    cmd = new MySqlCommand(insertQuery, conn);
+                    cmd.Parameters.AddWithValue("@nrFatures", nrFatures);
+                }
+
+                cmd.Parameters.AddWithValue("@emri", textBox1.Text.Trim());
+                cmd.Parameters.AddWithValue("@mbiemri", textBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@produkti", textBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@sasia", sasia);
+                cmd.Parameters.AddWithValue("@cmimi", cmimi);
+                cmd.Parameters.AddWithValue("@statusi", statusi);
+                cmd.Parameters.AddWithValue("@totali", totali);
+
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            form16Reference?.GetType().GetMethod("LoadPorosite")?.Invoke(form16Reference, null);
+            this.Close();
+        }
     }
 }

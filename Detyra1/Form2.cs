@@ -74,5 +74,11 @@ namespace Detyra1
           Form17 form17 = new Form17();
           form17.ShowDialog();
         }
+
+        private void raportiMujorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form20 form20 = new Form20();
+            form20.ShowDialog();
+        }
     }
 }

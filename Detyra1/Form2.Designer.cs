@@ -142,6 +142,7 @@ namespace Detyra1
             this.raportiMujorToolStripMenuItem.Name = "raportiMujorToolStripMenuItem";
             this.raportiMujorToolStripMenuItem.Size = new System.Drawing.Size(303, 46);
             this.raportiMujorToolStripMenuItem.Text = "Raporti Mujor";
+            this.raportiMujorToolStripMenuItem.Click += new System.EventHandler(this.raportiMujorToolStripMenuItem_Click);
             // 
             // label5
             // 

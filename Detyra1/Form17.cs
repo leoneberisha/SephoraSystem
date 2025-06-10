@@ -52,11 +52,7 @@ namespace Detyra1
                     : "0.00 €";
 
                 //Shfaq Porositë në DataGridView
-                string queryLista = @"SELECT emri_klientit AS 'Emri',
-                                     produkti AS 'Produkti',
-                                     sasia AS 'Sasia',
-                                     cmimi AS 'Çmimi',
-                                     totali AS 'Totali'
+                string queryLista = @"SELECT emri_klientit AS 'Emri', data,produkti, sasia,cmimi,totali
                               FROM porosit
                               WHERE DATE(data) = @data";
                 MySqlCommand cmdLista = new MySqlCommand(queryLista, conn);

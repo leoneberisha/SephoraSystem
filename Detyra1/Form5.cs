@@ -37,7 +37,6 @@ namespace Detyra1
             textBox5.Text = sasia;
             textBox6.Text = cmimiBlerjes;
             textBox7.Text = cmimiShitjes;
-            textBox8.Text = totali;
             textBox9.Text = aktiv;
         }
 
@@ -48,68 +47,46 @@ namespace Detyra1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            try
             {
-                string query = "INSERT INTO fondatine(emri_furnitorit, emri_fondatines, nuanca, stoku, sasia, cmimiBlerjes, cmimiShitjes, totali, aktiv) " +
-                               "VALUES (@emri_furnitorit, @emri_fondatines, @nuanca, @stoku, @sasia, @cmimiBlerjes, @cmimiShitjes, @totali, @aktiv)";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                cmd.Parameters.AddWithValue("@emri_furnitorit", textBox1.Text);
-                cmd.Parameters.AddWithValue("@emri_fondatines", textBox2.Text);
-                cmd.Parameters.AddWithValue("@nuanca", textBox3.Text);
-                cmd.Parameters.AddWithValue("@stoku", textBox4.Text);
-                cmd.Parameters.AddWithValue("@sasia", textBox5.Text);
-                cmd.Parameters.AddWithValue("@cmimiBlerjes", textBox6.Text);
-                cmd.Parameters.AddWithValue("@cmimiShitjes", textBox7.Text);
-                cmd.Parameters.AddWithValue("@totali", textBox8.Text);
-                cmd.Parameters.AddWithValue("@aktiv", textBox9.Text);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-
-            form6Reference.LoadFondatine();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                MySqlCommand cmd;
-
-                if (isEditMode)
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    string updateQuery = "UPDATE fondatine SET emri_furnitorit=@emri_furnitorit, emri_fondatines=@emri_fondatines, nuanca=@nuanca, stoku=@stoku, sasia=@sasia, cmimiBlerjes=@cmimiBlerjes, cmimiShitjes=@cmimiShitjes, totali=@totali, aktiv=@aktiv WHERE id=@id";
-                    cmd = new MySqlCommand(updateQuery, conn);
-                    cmd.Parameters.AddWithValue("@id", editingId);
-                }
-                else
-                {
-                    string insertQuery = "INSERT INTO fondatine(emri_furnitorit, emri_fondatines, nuanca, stoku, sasia, cmimiBlerjes, cmimiShitjes, totali, aktiv) " +
-                                         "VALUES (@emri_furnitorit, @emri_fondatines, @nuanca, @stoku, @sasia, @cmimiBlerjes, @cmimiShitjes, @totali, @aktiv)";
-                    cmd = new MySqlCommand(insertQuery, conn);
+                    string query = @"INSERT INTO fondatine
+                            (emri_furnitorit, emri_fondatines, nuanca, stoku, sasia, cmimiBlerjes, cmimiShitjes, totali, aktiv)
+                             VALUES 
+                            (@emri_furnitorit, @emri_fondatines, @nuanca, @stoku, @sasia, @cmimiBlerjes, @cmimiShitjes, @totali, @aktiv)";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    int sasia = int.Parse(textBox5.Text);
+                    decimal cmimiShitjes = decimal.Parse(textBox7.Text);
+                    decimal totali = sasia * cmimiShitjes;
+
+                    cmd.Parameters.AddWithValue("@emri_furnitorit", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@emri_fondatines", textBox2.Text);
+                    cmd.Parameters.AddWithValue("@nuanca", textBox3.Text);
+                    cmd.Parameters.AddWithValue("@stoku", textBox4.Text);
+                    cmd.Parameters.AddWithValue("@sasia", sasia);
+                    cmd.Parameters.AddWithValue("@cmimiBlerjes", textBox6.Text);
+                    cmd.Parameters.AddWithValue("@cmimiShitjes", cmimiShitjes);
+                    cmd.Parameters.AddWithValue("@totali", totali);
+                    cmd.Parameters.AddWithValue("@aktiv", textBox9.Text);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
                 }
 
-                cmd.Parameters.AddWithValue("@emri_furnitorit", textBox1.Text);
-                cmd.Parameters.AddWithValue("@emri_fondatines", textBox2.Text);
-                cmd.Parameters.AddWithValue("@nuanca", textBox3.Text);
-                cmd.Parameters.AddWithValue("@stoku", textBox4.Text);
-                cmd.Parameters.AddWithValue("@sasia", textBox5.Text);
-                cmd.Parameters.AddWithValue("@cmimiBlerjes", textBox6.Text);
-                cmd.Parameters.AddWithValue("@cmimiShitjes", textBox7.Text);
-                cmd.Parameters.AddWithValue("@totali", textBox8.Text);
-                cmd.Parameters.AddWithValue("@aktiv", textBox9.Text);
-
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                form6Reference?.LoadFondatine();
+                this.Close();
             }
-
-            form6Reference.LoadFondatine();
-            this.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gabim: " + ex.Message);
+            }
         }
+
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -141,6 +118,61 @@ namespace Detyra1
                 decimal totali = sasia * cmimiShitjes;
             }
            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!isEditMode)
+            {
+                MessageBox.Show("Nuk jeni në mënyrën e përditësimit.");
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    string query = @"UPDATE fondatine SET 
+                                emri_furnitorit = @furnitor,
+                                emri_fondatines = @emri,
+                                nuanca = @nuanca,
+                                stoku = @stoku,
+                                sasia = @sasia,
+                                cmimiBlerjes = @blerja,
+                                cmimiShitjes = @shitja,
+                                totali = @totali,
+                                aktiv = @aktiv
+                             WHERE id = @id";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    int sasia = int.Parse(textBox5.Text);
+                    decimal cmimiShitjes = decimal.Parse(textBox7.Text);
+                    decimal totali = sasia * cmimiShitjes;
+
+                    cmd.Parameters.AddWithValue("@id", editingId);
+                    cmd.Parameters.AddWithValue("@furnitor", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@emri", textBox2.Text);
+                    cmd.Parameters.AddWithValue("@nuanca", textBox3.Text);
+                    cmd.Parameters.AddWithValue("@stoku", textBox4.Text);
+                    cmd.Parameters.AddWithValue("@sasia", sasia);
+                    cmd.Parameters.AddWithValue("@blerja", textBox6.Text);
+                    cmd.Parameters.AddWithValue("@shitja", cmimiShitjes);
+                    cmd.Parameters.AddWithValue("@totali", totali);
+                    cmd.Parameters.AddWithValue("@aktiv", textBox9.Text);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+
+                form6Reference?.LoadFondatine();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gabim gjatë përditësimit:\n" + ex.Message);
+            }
         }
     }
 }

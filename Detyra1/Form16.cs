@@ -1,26 +1,30 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Detyra1
 {
     public partial class Form16 : Form
     {
+        public Form16()
+        {
+            InitializeComponent();
+        }
+
+        private void Form16_Load(object sender, EventArgs e)
+        {
+            LoadPorosite();
+        }
+
         private void LoadPorosite()
         {
             using (MySqlConnection conn = new MySqlConnection("server=localhost;database=sephorasistem;uid=root;pwd=;"))
             {
                 string query = @"SELECT id, emri_klientit AS 'Emri', mbiemri_klientit AS 'Mbiemri',
                                 produkti AS 'Produkti', sasia AS 'Sasia', cmimi AS 'Çmimi',
-                                statusi AS 'Statusi', totali AS 'Totali'
-                         FROM porosit";
+                                statusi AS 'Statusi', totali AS 'Totali', data
+                                 FROM porosit";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 DataTable table = new DataTable();
@@ -30,19 +34,16 @@ namespace Detyra1
                 dataGridView1.ReadOnly = true;
             }
         }
-        private void Form16_Load(object sender, EventArgs e)
-        {
-            LoadPorosite();
-        }
-
-        public Form16()
-        {
-            InitializeComponent();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form15 form = new Form15(this);
+            form.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -68,20 +69,6 @@ namespace Detyra1
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-  
-            Form15 form = new Form15(this); // nëse do t’i kthesh LoadProdukte() pas ruajtjes
-            form.ShowDialog();
-        
-
-    }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string kerkimi = textBox1.Text.Trim();
@@ -90,7 +77,7 @@ namespace Detyra1
             {
                 string query = @"SELECT id, emri_klientit AS 'Emri', mbiemri_klientit AS 'Mbiemri',
                                 produkti AS 'Produkti', sasia AS 'Sasia', cmimi AS 'Çmimi',
-                                statusi AS 'Statusi', totali AS 'Totali'
+                                statusi AS 'Statusi', totali AS 'Totali', data
                          FROM porosit
                          WHERE emri_klientit LIKE @kerko";
 
@@ -132,8 +119,7 @@ namespace Detyra1
                         conn.Close();
                     }
 
-                    // Rifresko pas fshirjes
-                    button2_Click(null, null); // ri-thirr kërkimin ekzistues
+                    button2_Click(null, null); // Rifresko me filtrimin ekzistues
                 }
             }
             else
@@ -141,5 +127,22 @@ namespace Detyra1
                 MessageBox.Show("Zgjedh një rresht për të fshirë.");
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["id"].Value);
+                string emri = dataGridView1.SelectedRows[0].Cells["Emri"].Value.ToString();
+
+                Form19 fatura = new Form19(id, emri);
+                fatura.Show();
+            }
+            else
+            {
+                MessageBox.Show("Zgjedh një porosi për të gjeneruar faturën.");
+            }
+        }
+
     }
 }
