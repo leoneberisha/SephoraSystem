@@ -12,7 +12,7 @@ namespace Detyra1
         public Form3()
         {
             InitializeComponent();
-            LoadFurnitore(); // Ngarko të dhënat kur hapet forma
+            // Ngarko të dhënat kur hapet forma
         }
 
         public void LoadFurnitore()
@@ -96,7 +96,7 @@ namespace Detyra1
                         conn.Close();
                     }
 
-                    LoadFurnitore();
+                   
                 }
             }
             else
@@ -132,8 +132,13 @@ namespace Detyra1
                 MessageBox.Show("Zgjedh një rresht për të edituar.");
             }
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            LoadFurnitore();
+              
+         }
     }
 }
-
 
 
