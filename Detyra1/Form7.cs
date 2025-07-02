@@ -35,8 +35,7 @@ namespace Detyra1
             textBox3.Text = sasia;
             textBox4.Text = cmimiBlerjes;
             textBox5.Text = cmimiShitjes;
-            textBox6.Text = totali;
-            textBox7.Text = aktiv;
+            textBox6.Text = aktiv;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,7 +51,6 @@ namespace Detyra1
             textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
-            textBox7.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,8 +77,7 @@ namespace Detyra1
                 cmd.Parameters.AddWithValue("@sasia", textBox3.Text);
                 cmd.Parameters.AddWithValue("@cmimiBlerjes", textBox4.Text);
                 cmd.Parameters.AddWithValue("@cmimiShitjes", textBox5.Text);
-                cmd.Parameters.AddWithValue("@totali", textBox6.Text);
-                cmd.Parameters.AddWithValue("@aktiv", textBox7.Text);
+                cmd.Parameters.AddWithValue("@aktiv", textBox6.Text);
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -104,8 +101,7 @@ namespace Detyra1
                 cmd.Parameters.AddWithValue("@sasia", textBox3.Text);
                 cmd.Parameters.AddWithValue("@cmimiBlerjes", textBox4.Text);
                 cmd.Parameters.AddWithValue("@cmimiShitjes", textBox5.Text);
-                cmd.Parameters.AddWithValue("@totali", textBox6.Text);
-                cmd.Parameters.AddWithValue("@aktiv", textBox7.Text);
+                cmd.Parameters.AddWithValue("@aktiv", textBox6.Text);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
