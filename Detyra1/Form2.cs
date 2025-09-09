@@ -39,23 +39,12 @@ namespace Detyra1
         }
 
        
-
         private void ShihBlush(object sender, EventArgs e)
         {
             Form12 form12 = new Form12();
             form12.ShowDialog();
         }
 
-
-
-
-      
-
-        private void ShihProduktet(object sender, EventArgs e)
-        {
-            Form14 form14= new Form14();
-            form14.ShowDialog();
-        }
 
         private void ShihPorosite(object sender, EventArgs e)
         {
