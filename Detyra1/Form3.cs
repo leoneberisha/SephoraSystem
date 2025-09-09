@@ -107,7 +107,7 @@ namespace Detyra1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // opsionale nëse do të trajtosh klikime në qeliza
+
         }
 
         private void button4_Click_1(object sender, EventArgs e)
