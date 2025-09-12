@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form20));
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -100,15 +101,6 @@
             this.textBox1.Size = new System.Drawing.Size(152, 22);
             this.textBox1.TabIndex = 13;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(-1, 234);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 16);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "From Date:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -118,6 +110,15 @@
             this.label1.Size = new System.Drawing.Size(346, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Raport i shitjeve";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(-1, 234);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 16);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "From Date:";
             // 
             // label12
             // 
@@ -199,6 +200,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form20";
             this.Text = "Form20";
             this.Load += new System.EventHandler(this.Form20_Load);

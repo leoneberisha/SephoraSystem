@@ -54,7 +54,7 @@ namespace Detyra1
                 string totali = selectedRow.Cells["Totali"].Value.ToString();
                 string aktiv = selectedRow.Cells["Aktiv"].Value.ToString();
 
-                Form7 form7 = new Form7(this, id, emriFurnitorit, emriMaskares, sasia, cmimiBlerjes, cmimiShitjes, aktiv, totali, true);
+                Form7 form7 = new Form7(this, id, emriFurnitorit, emriMaskares, sasia, cmimiBlerjes, cmimiShitjes,  totali,aktiv, true);
                 form7.ShowDialog();
             }
             else
