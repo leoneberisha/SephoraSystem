@@ -1,6 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Detyra1
@@ -19,6 +25,7 @@ namespace Detyra1
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
+                conn.Open();
                 string query = "SELECT id, emriFurnitorit AS 'Furnitori', emriMaskares AS 'Maskara', sasia AS 'Sasia', cmimiBlerjes AS 'Blerja', cmimiShitjes AS 'Shitja', totali AS 'Totali', aktiv AS 'Aktiv' FROM maskara";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 DataTable table = new DataTable();
@@ -100,7 +107,7 @@ namespace Detyra1
                         cmimiBlerjes AS 'Blerja',
                         cmimiShitjes AS 'Shitja',
                         totali AS 'Totali',
-                        aktiv AS 'Statusi'
+                        aktiv AS 'Aktiv'
                 FROM maskara
                 WHERE emriMaskares LIKE @search";
 
@@ -118,4 +125,9 @@ namespace Detyra1
 
     }
 }
+
+
+
+
+
 
