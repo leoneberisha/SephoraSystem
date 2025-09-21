@@ -71,12 +71,21 @@ namespace Detyra1
                     string insertQuery = "INSERT INTO maskara(emriFurnitorit, emriMaskares, sasia, cmimiBlerjes, cmimiShitjes, totali, aktiv) VALUES(@emriFurnitorit, @emriMaskares, @sasia, @cmimiBlerjes, @cmimiShitjes, @totali, @aktiv)";
                     cmd = new MySqlCommand(insertQuery, conn);
                 }
+                int sasia;
+                decimal cmimiBlerjes, cmimiShitjes;
+                int.TryParse(textBox3.Text, out sasia);
+                decimal.TryParse(textBox4.Text, out cmimiBlerjes);
+                decimal.TryParse(textBox5.Text, out cmimiShitjes);
+                decimal totali = sasia * cmimiShitjes;
 
+                
+                cmd.Parameters.AddWithValue("@totali", totali);
                 cmd.Parameters.AddWithValue("@emriFurnitorit", textBox1.Text);
                 cmd.Parameters.AddWithValue("@emriMaskares", textBox2.Text);
                 cmd.Parameters.AddWithValue("@sasia", textBox3.Text);
                 cmd.Parameters.AddWithValue("@cmimiBlerjes", textBox4.Text);
                 cmd.Parameters.AddWithValue("@cmimiShitjes", textBox5.Text);
+                cmd.Parameters.AddWithValue("@totali", totali);
                 cmd.Parameters.AddWithValue("@aktiv", textBox6.Text);
 
                 cmd.ExecuteNonQuery();
