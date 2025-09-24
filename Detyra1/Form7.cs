@@ -78,7 +78,7 @@ namespace Detyra1
                 decimal.TryParse(textBox5.Text, out cmimiShitjes);
                 decimal totali = sasia * cmimiShitjes;
 
-                
+               
                 cmd.Parameters.AddWithValue("@totali", totali);
                 cmd.Parameters.AddWithValue("@emriFurnitorit", textBox1.Text);
                 cmd.Parameters.AddWithValue("@emriMaskares", textBox2.Text);
@@ -117,7 +117,7 @@ namespace Detyra1
                 conn.Close();
             }
 
-            form8Reference.LoadMaskara(); // rifreskon Form8
+            form8Reference.LoadMaskara(); 
             this.Close();
         }
 
